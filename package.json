@@ -1,12 +1,23 @@
 {
   "name": "bounty-radar-mcp",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "MCP server: find, score and plan paid GitHub bounty issues across funding platforms",
   "type": "module",
   "main": "server.js",
-  "bin": { "bounty-radar": "server.js" },
-  "files": ["server.js", "README.md"],
+  "bin": {
+    "bounty-radar": "server.js"
+  },
+  "files": [
+    "server.js",
+    "README.md"
+  ],
   "license": "SEE LICENSE IN https://mcp-marketplace.io/server/bounty-radar",
-  "engines": { "node": ">=18" },
-  "dependencies": { "@mcp_marketplace/license": "^1.2.0" }
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@mcp_marketplace/license": "^1.2.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  }
 }
