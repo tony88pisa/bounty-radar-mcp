@@ -7,6 +7,7 @@ Find funded GitHub bounty issues worth solving — scan boards, score ROI, plan 
 Bounty Radar turns the noisy world of paid open-source bounties into a ranked, actionable feed for AI agents and solo developers. It scans live bounty sources (GitHub issue labels used by Algora, Opire, Polar, Bountysource-style boards), extracts reward amounts in USD, filters out stale or unverifiable listings, and returns a scored shortlist with the metadata an agent needs to decide whether to attempt a fix: repo, language, issue age, reward, labels, and direct links. Built by a production multi-agent system that races on these bounties daily, it encodes real heuristics: reward-per-effort scoring, freshness weighting, and scam/spam rejection. Use it to hunt paid work on autopilot or to brief your coding agent before it writes a single line.
 
 ## Setup Requirements
+- `MCP_LICENSE_KEY` (required): Your license key from the purchase, shown right after checkout and in your MCP Marketplace dashboard (License Keys tab). Install command: `npx -y bounty-radar-mcp`.
 - `GITHUB_TOKEN` (optional): A GitHub personal access token for higher API rate limits (60/hr unauthenticated, 5000/hr authenticated). https://github.com/settings/tokens — no scopes required for public data.
 
 ## Category

@@ -1,6 +1,13 @@
 #!/usr/bin/env node
-// bounty-radar-mcp — zero-dependency MCP server (stdio JSON-RPC)
+// bounty-radar-mcp — MCP server (stdio JSON-RPC) · license-gated for mcp-marketplace.io
 // Tools: bounty_scan, bounty_score, bounty_platforms, bounty_pr_plan
+import { createRequire } from 'node:module';
+const { verifyLicense } = createRequire(import.meta.url)('@mcp_marketplace/license');
+const license = await verifyLicense({ slug: 'bounty-radar', exitOnFailure: false });
+if (!license.valid) {
+  process.stderr.write(`bounty-radar: license required (${license.reason || 'invalid key'})\nBuy: https://mcp-marketplace.io/server/bounty-radar — set MCP_LICENSE_KEY in your MCP client env.\n`);
+  process.exit(1);
+}
 const TOKEN = process.env.GITHUB_TOKEN || '';
 const UA = { 'User-Agent': 'bounty-radar-mcp/1.0', 'Accept': 'application/vnd.github+json', ...(TOKEN ? { Authorization: `Bearer ${TOKEN}` } : {}) };
 let buf = '';
